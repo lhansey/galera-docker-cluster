@@ -12,14 +12,14 @@ if [ "$action" = "up" ]; then
 fi
 
 case "$action" in
-	up)
-		action+=" -d"
-		docker compose -p galera1 -f docker-compose-db1.yaml $action
-		sleep 6
-		docker compose -p galera2 -f docker-compose-db2.yaml $action
-		docker compose -p galera3 -f docker-compose-db3.yaml $action
-		;;
-	down)
+    up)
+        action+=" -d"
+        docker compose -p galera1 -f docker-compose-db1.yaml $action
+        sleep 6
+        docker compose -p galera2 -f docker-compose-db2.yaml $action
+        docker compose -p galera3 -f docker-compose-db3.yaml $action
+        ;;
+    down)
         for i in $(seq 3 -1 1); do
             if [ $i = 1 ]; then
                 sleep 6
