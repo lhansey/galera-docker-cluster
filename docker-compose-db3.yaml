@@ -23,9 +23,3 @@ networks:
   galeranet:
     external: true
     name: galeranet
-#    ipam:
-#      driver: default
-#      config:
-#        - subnet: 192.168.128.0/20
-#          gateway: 192.168.128.1
-
