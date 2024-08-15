@@ -20,13 +20,13 @@ case "$action" in
 		docker compose -p galera3 -f docker-compose-db3.yaml $action
 		;;
 	down)
-		for i in $(seq 3 -1 1); do
+        for i in $(seq 3 -1 1); do
             if [ $i = 1 ]; then
-                    sleep 6
+                sleep 6
             fi
-			docker compose -p galera${i} down
-		done
-		;;
+            docker compose -p galera${i} down
+        done
+        ;;
 esac
 
 if [[ "$action" = "down" && $? -eq 0 ]]; then
